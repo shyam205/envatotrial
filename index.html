@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="swiper.min.css">
+  
+  <title>envato</title>
+  <script>
+    $(document).ready(function(){
+      var i = 0;
+    $("#toggle").click(function(){
+       var k = i%2;
+       if(k==0){
+         $(".nav ul").removeClass("unlist");
+         i++;
+       }
+       else{
+        $(".nav ul").addClass("unlist");
+          i++;
+       }
+    });
+    $(".swiper-slide.active .contents").delay(5000).fadeIn();
+      $(".swiper-button-next").click(function(){
+        
+        var currentslide=$(".swiper-slide.active");
+       var nextslide=currentslide.next();
+       
+       currentslide.delay(200).fadeOut();
+       nextslide.delay(3000).fadeIn();
+
+       nextslide.style.transitionDelay ="2s";
+
+       currentslide.removeClass("active");
+         nextslide.addClass("active");
+          
+        });
+
+       $(".swiper-button-prev").click(function(){
+        
+        var currentslide=$(".swiper-slide.active");
+       var prevslide=currentslide.prev();
+       
+       currentslide.removeClass("active");
+         prevslide.addClass("active");
+       });
+    
+      
+       
+    });
+  </script>
+</head>
+<body>
+  <div class="nav">
+    
+    <div class="logo">
+  <img src="images/LOGO.png">
+ 
+    <label for="check" class="checkbtn" >
+      <i class="fas fa-bars" id="toggle" style="color:white"></i>
+    </label> 
+    </div>
+    
+    <div>
+    <ul class="unlist">
+      <li><a href="#">Home</a>
+      </li>
+      <li><a href="#">projects</a>
+        </li>
+      <li><a href="#">Services</a>
+        </li>
+      <li><a href="#">Pages</a>
+        </li>
+      <li><a href="#">Blogs</a>
+        </li>
+      <li><a href="#">Shop</a>
+        </li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</div>
+  </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+        
+          <div class="swiper-slide movivg">
+            <div class="background-image">
+            <img src="images/slide-01.jpg">
+            </div>
+            <div class="contents">
+                <div class="professional"> <p>1PROFESSIONAL</p></div>
+               <div class="interior-design"><h2>INTERIOR DESIGN</h2></div>
+               <div class="contact"><a>Contact now</a></div>    
+            </div>
+          </div>
+    
+          <div class="swiper-slide">
+            <div class="background-image">
+                <img src="images/slide-02.jpg">
+                 </div>
+                 <div class="contents">
+                    <div class="professional"> <p>2PROFESSIONAL</p></div>
+                    <div class="interior-design"><h2>INTERIOR DESIGN</h2></div>
+                    <div class="contact"><a>Contact now</a></div> 
+                </div>
+         </div>
+          <div class="swiper-slide">  
+            <div class="background-image">
+                <img src="images/slide-03.jpg">
+                 </div>
+                 <div class="contents">
+                    <div class="professional"> <p>3PROFESSIONAL</p></div>
+                    <div class="interior-design"><h2>INTERIOR DESIGN</h2></div>
+                    <div class="contact"><a>Contact now</a></div> 
+                </div>
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    
+     <script type="text/javascript" src="swiper.min.js"></script>
+    
+     <script>
+       
+        var swiper = new Swiper('.swiper-container', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          autoplay:true,
+          effect: 'fade',
+          speed:900,
+       loop: true,
+       freeMode: true,
+          keyboard: {
+            enabled: true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+       
+        });
+        
+      </script>
+      <script>
+        $(".swiper-container").each(function(elem, target){
+          var ssecond = target.swiper;
+          $(this).hover(function() {
+              ssecond.autoplay.stop();
+          }, function() {
+              ssecond.autoplay.start();
+          });
+      });
+      </script>
+      
+</body>
+</html>
+
